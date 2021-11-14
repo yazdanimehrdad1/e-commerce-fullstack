@@ -35,9 +35,9 @@ const productController = {
 
 
     createProduct: async (req, res)=>{
-        const {product_id, title, price, description, content, images, category, checked, sold} = req.body;
+        const {owner_id, product_id, title, price, description, content, images, category, checked, sold} = req.body;
 
-        console.log(req.body)
+        console.log("createProduct",req.body)
 
         try {
 
@@ -48,6 +48,7 @@ const productController = {
 
             const newProduct = new Product(
                 {
+                    owner_id:owner_id,
                     product_id:product_id,
                     title : title.toLowerCase(),
                     price :price,

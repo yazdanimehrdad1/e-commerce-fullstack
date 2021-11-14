@@ -10,25 +10,6 @@ console.log(authenticateAdmin)
 
 
 
-const imageStorage = multer.diskStorage({
-    destination: 'images',
-    filename: (req,file, cb)=>{
-        cb(null, file.fieldname + '_'+ Date.now() + Path2D.extname(file.originalname))
-    }
-})
-
-
-const imageUpload = multer({
-    storage: imageStorage,
-    limits:{ fileSize: 1000000},
-    fileFilter(req, file, cb){
-        if(!file.originalname,match(/\.(ong|jpg)$/)){
-            return cb(new Error('Please upload  jpg or png format image'))
-        }
-        cb(undefined, true)
-    }
-})
-
 
 
 

@@ -2,6 +2,10 @@ const mongoose = require('mongoose')
 
 
 const productSchema = new mongoose.Schema({
+    owner_id:{
+        type:String,
+    },
+    
     product_id:{
         type:String,
         unique: true,
@@ -44,6 +48,10 @@ const productSchema = new mongoose.Schema({
     sold:{
         type:Number,
         default:0
+    },
+    like:{
+        type:Number,
+        default: 0
     }
 
 },{timestamps:true})

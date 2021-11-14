@@ -1,5 +1,5 @@
 
-const stripe = require('stripe')("sk_test_51JtljkCLhsRRew9Gta3nQJtpC7ouMcMItzHnViYW3pcwZ1ClbywFHPHEsF2Zq7xpEXpXDy8ClTf935rdqPHCczLh00ERUcayhA")
+const stripe = require('stripe')(process.env.STRIPE_SK)
 
 const paymentController = {
     health: async (req, res)=>{
